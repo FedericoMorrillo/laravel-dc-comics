@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
+use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Composer;
 
 class PageController extends Controller
 {
@@ -12,7 +14,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $comics = Comic::all();
+        return view('welcome', compact('comics'));
     }
 
     // /**
