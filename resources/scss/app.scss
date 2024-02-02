@@ -2,9 +2,24 @@
 @import "_partials/reset.scss";
 
 body {
-    //background-image: url("../img/duck.jpg");
+    background-color: rgb(102, 102, 102);
+}
 
-    h1 {
-        color: blue;
+.container {
+    width: 90%;
+
+    .card {
+        width: calc(100% / 3 - 20px);
+        margin: .625rem;
+
+        .img {
+            width: 12.5rem;
+            object-fit: cover;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
     }
 }

@@ -10,9 +10,37 @@
 </head>
 
 <body>
-@foreach ($comics as $comic)
-    
-@endforeach
+    <div class="container d-flex flex-wrap">
+        @foreach ($comics as $comic)
+        <div class="card p-1">
+            <div class="p-1">
+                {{$comic->title}}
+            </div>
+            <div class="d-flex justify-content-center my-3">
+                <div class="img">
+                    <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
+                </div>
+            </div>
+            
+            <ul class="py-2">
+                <li>
+                    <span class="pl-2">Prezzo: </span>{{$comic->price}}
+                </li>
+                <li>
+                    <span class="pl-2">Data di uscita: </span>{{$comic->sale_date}}
+                </li>
+                <li>
+                    <span class="pl-2">Serie: </span>{{$comic->series}}
+                </li>
+                <li>
+                    <span class="pl-2">Genere: </span>{{$comic->type}}
+                </li>
+            </ul>
+            <a href="{{route('comics.show', $comic->id)}}">visualizza</a>
+        </div>
+        @endforeach      
+    </div>
+
 </body>
 
 </html>

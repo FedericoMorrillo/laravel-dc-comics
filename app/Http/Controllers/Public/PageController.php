@@ -18,13 +18,13 @@ class PageController extends Controller
         return view('welcome', compact('comics'));
     }
 
-    // /**
-    //  * Show the form for creating a new resource.
-    //  */
-    // public function create()
-    // {
-    //     //
-    // }
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
 
     // /**
     //  * Store a newly created resource in storage.
@@ -34,13 +34,14 @@ class PageController extends Controller
     //     //
     // }
 
-    // /**
-    //  * Display the specified resource.
-    //  */
-    // public function show(string $id)
-    // {
-    //     //
-    // }
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $comic = Comic::find($id);
+        return view('comics.show', compact('comic'));
+    }
 
     // /**
     //  * Show the form for editing the specified resource.
