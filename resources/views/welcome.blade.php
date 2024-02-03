@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <!--contenitore-->
     <div class="container d-flex flex-wrap">
         @foreach ($comics as $comic)
         <div class="card p-1">
@@ -38,9 +39,22 @@
             </ul>
             <a href="{{route('comics.show', $comic->id)}}">visualizza</a>
         </div>
-        @endforeach      
+        @endforeach  
+        
     </div>
+    <!--/contenitore-->
 
+    <!-- contenitore bottone-->
+    <div class="d-flex justify-content-center mb-2">
+
+        <!--bottone-->
+        <button class="primary-btn">
+        <a href="{{route('comics.create')}}"> aggiungi comic</a>
+        </button> 
+        <!--/bottone-->
+    </div>
+    <!--/contenitore bottone-->
+       
 </body>
 
 </html>

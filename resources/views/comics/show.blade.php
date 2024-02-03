@@ -8,16 +8,35 @@
     @vite('resources/js/app.js')
 </head>
 <body>
-<div class="container d-flex justify-content-center">
-    <div>
-        <div class="py-5">
-            <strong class="pe-2">Titolo:</strong>{{$comic->title}}
-        </div>
-        <div>
-            <strong class="pe-2">Descrizione:</strong>{{$comic->description}}
-        </div> 
-    </div>
+    <!--contenitore-->
+<div class="container d-flex justify-content-center"> <!--utilizzo per centrare la card-->
+    
+    <div> <!--utilizzo per non affiancare i dati-->
 
+        <!--titolo-->
+        <h1>comic: {{$comic->id}}</h1>
+        <!--/titolo-->
+
+            <!--card-->
+        <div class="card-show">
+
+            <!--titolo-->
+            <div class="pb-3">
+                <strong class="pe-2">Titolo:</strong>{{$comic->title}}
+            </div>
+            <!--/titolo-->
+
+            <!--descrizione-->
+            <div class="py-3">
+                <strong class="pe-2">Descrizione:</strong>{{$comic->description}}
+            </div> 
+            <!--/descrizione-->
+            
+        </div>
+        <!--/card-->
+
+    </div>
 </div>
+    <!--/contenitore-->
 </body>
 </html>

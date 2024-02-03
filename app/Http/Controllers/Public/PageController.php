@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Composer;
+use Spatie\LaravelIgnition\Solutions\SolutionProviders\ViewNotFoundSolutionProvider;
 
 class PageController extends Controller
 {
@@ -14,6 +15,7 @@ class PageController extends Controller
      */
     public function index()
     {
+        //passiamo i dati alla pagina principale
         $comics = Comic::all();
         return view('welcome', compact('comics'));
     }
@@ -23,22 +25,39 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        //indirizziamo alla pagina create.blade.php
+        return view('comics.create');
     }
 
     // /**
     //  * Store a newly created resource in storage.
     //  */
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
+    public function store(Request $request)
+    {
+        //dati da salvare
+        $data = $request->all();
+
+        $comic = new Comic();
+        $comic->title = $data['title'];
+        $comic->description = $data['description'];
+        $comic->thumb = $data['thumb'];
+        $comic->price = $data['price'];
+        $comic->series = $data['series'];
+        $comic->sale_date = $data['sale_date'];
+        $comic->type = $data['type'];
+
+        //salviamo i dati
+        $comic->save();
+        //reindiriziamo alla pagina principale
+        return redirect()->route('comics.index');
+    }
 
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
+        //tramite id mostriamo la pagina show.blade.php con i dati del comic tramite id
         $comic = Comic::find($id);
         return view('comics.show', compact('comic'));
     }
