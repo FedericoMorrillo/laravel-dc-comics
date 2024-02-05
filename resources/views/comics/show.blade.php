@@ -32,9 +32,13 @@
             </div> 
             <!--/descrizione-->
             
+            <!--route pagina principale-->
+            <a href="{{route('comics.index')}}">torna ai comics</a>
+            <!--/route pagina principale-->
         </div>
         <!--/card-->
 
+        
     </div>
 </div>
     <!--/contenitore-->

@@ -37,7 +37,11 @@
                     <span class="pl-2">Genere: </span>{{$comic->type}}
                 </li>
             </ul>
-            <a href="{{route('comics.show', $comic->id)}}">visualizza</a>
+            <div class="d-flex">
+                <a class="me-4" href="{{route('comics.show', $comic->id)}}">visualizza</a>
+                <a href="{{route('comics.edit', $comic->id)}}"> modifica</a>
+            </div>
+            
         </div>
         @endforeach  
         
