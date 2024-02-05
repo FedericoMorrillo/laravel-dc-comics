@@ -12,7 +12,7 @@
    <div class="container">
 
     <!--form-->
-        <form action="{{route('comics.store')}}" method="POST">
+        <form class="form" action="{{route('comics.store')}}" method="POST">
         <h1 class="text-center">Create new comic</h1>    
         @csrf
         <div class="mb-3">

@@ -96,8 +96,13 @@ class PageController extends Controller
     // /**
     //  * Remove the specified resource from storage.
     //  */
-    // public function destroy(string $id)
-    // {
+    public function destroy(string $id)
+    {
+        $comic = Comic::find($id);
+        //metodo per eliminare 
+        $comic->delete();
 
-    // }
+        //reindiriziamo alla pagina principale
+        return redirect()->route('comics.index');
+    }
 }

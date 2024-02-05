@@ -38,10 +38,25 @@
                 </li>
             </ul>
             <div class="d-flex">
+                <!--show link-->
                 <a class="me-4" href="{{route('comics.show', $comic->id)}}">visualizza</a>
-                <a href="{{route('comics.edit', $comic->id)}}"> modifica</a>
+                <!--/show link-->
+                
+                <!--edit link-->
+                <a class="me-4" href="{{route('comics.edit', $comic->id)}}"> modifica</a>
+                <!--/edit link-->
+
+                <!--destroy-->
+                <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                    @csrf
+
+                    <!--richiamiamo il metodo-->
+                    @method('DELETE')
+                    <input type="submit" value="Cancella">
+                </form>
+                <!--/destroy-->
             </div>
-            
+
         </div>
         @endforeach  
         

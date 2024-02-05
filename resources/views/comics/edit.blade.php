@@ -12,7 +12,7 @@
    <div class="container">
 
     <!--form-->
-        <form action="{{route('comics.update', $comic->id)}}" method="POST">
+        <form class="form" action="{{route('comics.update', $comic->id)}}" method="POST">
         <h1 class="text-center">edit comic</h1>    
         @csrf
 
