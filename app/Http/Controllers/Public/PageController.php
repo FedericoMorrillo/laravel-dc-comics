@@ -34,6 +34,19 @@ class PageController extends Controller
     //  */
     public function store(Request $request)
     {
+        //validazione
+        $request->validate(
+            [
+                'title' => 'required|max:50|min:5',
+                'description' => 'required|max:500|min:4',
+                'thumb' => 'required|max:500',
+                'price' => 'required|max:6',
+                'series' => 'required|max:50',
+                'type' => 'required|max:50',
+
+            ]
+        );
+
         //dati da salvare
         $data = $request->all();
 
@@ -76,6 +89,19 @@ class PageController extends Controller
     //  */
     public function update(Request $request, Comic $comic)
     {
+        //validazione
+        $request->validate(
+            [
+                'title' => 'required|max:50|min:5',
+                'description' => 'required|max:500|min:4',
+                'thumb' => 'required|max:500',
+                'price' => 'required|max:6',
+                'series' => 'required|max:50',
+                'type' => 'required|max:50',
+
+            ]
+        );
+
         $data = $request->all();
 
         $comic->title = $data['title'];
